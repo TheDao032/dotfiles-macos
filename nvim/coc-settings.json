@@ -1,0 +1,23 @@
+{
+  "coc.preferences.snippets.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": ["html", "css", "markdown"],
+  "eslint.autoFix": true,
+  "eslint.autoFixOnSave": true,
+  "jedi.enable": true,
+  "jedi.startupMessage": true,
+  "jedi.markupKindPreferred": "plaintext",
+  "jedi.trace.server": true,
+  "jedi.jediSettings.autoImportModules": [],
+  "jedi.executable.command": "/Users/daotnguyen/.config/coc/extensions/node_modules/coc-jedi/.venv/bin/jedi-language-server",
+  "jedi.executable.args": [],
+  "jedi.completion.disableSnippets": false,
+  "jedi.diagnostics.enable": true,
+  "jedi.diagnostics.didOpen": true,
+  "jedi.diagnostics.didChange": true,
+  "jedi.diagnostics.didSave": true,
+  "jedi.workspace.extraPaths": [],
+  "python.pythonPath": "/Users/daotnguyen/Library/Caches/pypoetry/virtualenvs/user-api-E3RjXAlz-py3.9/bin/python3",
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true
+}
