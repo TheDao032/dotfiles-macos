@@ -110,13 +110,19 @@ let g:pymode_run_bind='<F1>'
 let g:pymode_run_bind='<F3>'
 let g:pymode_run_bind='<F4>'
 let g:pymode_run_bind='<F5>'
+let g:pymode_run_bind='<F6>'
 " apollo project (kaypay)
-" install package via poetry
+" install user-api package via poetry
 noremap <F1> <C-[>:w<CR>:!cd ./services/src && poetry install<CR>
-" apollo services test
+" apollo user-apis services test
 noremap <F3> <C-[>:w<CR>:!cd ./services/src/app/tests/integration && poetry run pytest -vv<CR>
-" apollo services start
+" apollo user-apis services start
 noremap <F4> <C-[>:term<CR>icd ./services/src && poetry run uvicorn app.main:app --reload<CR><C-\><C-n>m<S-a>
+
+" apollo payment-apis services build
+noremap <F5> <C-[>:w<CR>:!sam build<CR>
+" apollo payment-apis services start
+noremap <F6> <C-[>:term<CR>isam local start-api --env-vars tests/env.json<CR><C-\><C-n>m<S-s>
 " noremap <F4> <C-[>:w<CR>:!python3 %<CR>
 " noremap <F5> <C-[>:term<CR>isudo /odoo/odoo-server/start.sh<CR><C-\><C-n>m<S-a>
 
@@ -372,7 +378,8 @@ let g:coc_global_extensions = [
   \ 'coc-emmet',
   \ 'coc-marketplace',
   \ 'coc-html',
-  \ 'coc-jedi'
+  \ 'coc-jedi',
+  \ 'coc-diagnostic'
   \ ]
 
 " Prettier Command
