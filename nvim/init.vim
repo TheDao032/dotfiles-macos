@@ -57,13 +57,7 @@ Plug 'turbio/bracey.vim'
 " Plug 'shushcat/vim-minimd'
 " Plug 'rlue/vim-barbaric'
 " Plug 'dkarter/bullets.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'BurntSushi/ripgrep'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'ihsanturk/neuron.vim'
 Plug 'SidOfc/mkdx'
@@ -79,6 +73,17 @@ Plug 'burnettk/vim-angular'
 Plug 'SirVer/ultisnips' | Plug 'phux/vim-snippets'
 Plug 'phpactor/phpactor', { 'do': ':call phpactor#Update()', 'for': 'php'}
 Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
+" Plug for git integration
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+" End integration for git
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 " Plug 'liuchengxu/vim-which-key'
 " Plug 'plasticboy/vim-markdown' 
 
@@ -139,6 +144,10 @@ noremap <F6> <C-[>:term<CR>isam local start-api --env-vars tests/env.json<CR><C-
 noremap <Leader>fn :foldopen<CR>
 " FoldClose noremap
 noremap <Leader>fe :foldclose<CR>
+
+" Signify Config (Jump though hunks)
+noremap <Leader>gj <Plug>(signify-next-hunk)
+noremap <Leader>gk <Plug>(signify-prev-hunk)
 
 " For Emacs-style editing on the command-line: >
 " --------------------------------------------
@@ -313,6 +322,15 @@ vmap <Plug> <Plug>(mkdx-text-italic-v)
 
  let g:loaded_node_provider = 0
 
+ " GIT Intergration
+ let g:signify_sign_show_count = 0
+ let g:signify_sign_show_text = 1
+
+ let g:signify_sign_add = '+'
+ let g:signify_sign_delete = '_'
+ let g:signify_sign_delete_first_line = '-'
+ let g:signify_sign_change = '~'
+
  function! s:goyo_enter()
  	set noshowmode
  	set noshowcmd
@@ -371,7 +389,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-go', 
   \ 'coc-vetur', 
-  \ 'coc-python', 
+  \ 'coc-pyright', 
   \ 'coc-json',
   \ 'coc-css',
   \ 'coc-tsserver',
@@ -379,7 +397,7 @@ let g:coc_global_extensions = [
   \ 'coc-marketplace',
   \ 'coc-html',
   \ 'coc-jedi',
-  \ 'coc-diagnostic'
+  \ 'coc-git'
   \ ]
 
 " Prettier Command
